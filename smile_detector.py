@@ -4,6 +4,7 @@ from pynq.overlays.base import BaseOverlay
 from pynq.lib.video import *
 import numpy as np
 from pynq import Xlnk
+import time
 import cv2
 
 xlnk = Xlnk()
@@ -29,9 +30,23 @@ hdmi_out.start()
 cap = cv2.VideoCapture(0)
 print(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 print(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-print("Capture device is open?: " + str(cap.isOpened()))
+print("Capture device is open? " + str(cap.isOpened()))
+
+#Global Vars
+start_recording = False
+trigger_time = 0 #Hold timestamp of the last detection
+
+num_smiles = 0
+
+fourcc = cv2.VideoWriter_fourcc(*'XVID')
+writer =cv2.VideoWriter('capture_moments/'+time.strftime("%Y%m%d-%H%M%S") + '.avi',fourcc, 10.0, (frame_w,frame_h))
+  
+    
+# Facial and Smile recognition:
+
 
 try:
+    started = time.time()
     while base.buttons[1].read()==0:
             ret, frame_vga = cap.read()
             if (ret):
@@ -42,7 +57,12 @@ try:
                 """
                 
                 np_frame = frame_vga
+                
+                instant = time.time() # get timestamp of the frame
+
+                      
                 gray = cv2.cvtColor(np_frame, cv2.COLOR_BGR2GRAY)
+                
 
                 faces = face_cascade.detectMultiScale(gray, 1.3, 5)
 
@@ -77,6 +97,22 @@ try:
                             fontScale,
                             fontColor,
                             lineType)
+                    if len(smiles) > 0:
+                        num_smiles = len(smiles)
+                        trigger_time = instant
+                        start_recording = True
+                    if start_recording and instant <= trigger_time + 30:
+                        writer.write(frame_vga)
+                        print("writing because ", instant, trigger_time + 10)
+                    else:
+                        print("STOP RECORDING")
+                        start_recording = False
+                        
+                        #capture_video('captured_moments', 5)
+                        
+                        # capture smiling images
+                        #cv2.imwrite('capture_moments/' + time.strftime("%Y%m%d-%H%M%S") + '.jpg', frame_vga)
+                        
 
                 # Output OpenCV results via HDMI
                 outframe = hdmi_out.newframe()
@@ -93,4 +129,5 @@ finally:
     print("Cancel")
     hdmi_out.stop()
     cap.release()
+    writer.release()
     cv2.destroyAllWindows()
