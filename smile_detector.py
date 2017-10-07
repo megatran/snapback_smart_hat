@@ -38,10 +38,8 @@ trigger_time = 0 #Hold timestamp of the last detection
 
 num_smiles = 0
 
-fourcc = cv2.VideoWriter_fourcc(*'XVID')
-writer =cv2.VideoWriter('capture_moments/'+time.strftime("%Y%m%d-%H%M%S") + '.avi',fourcc, 10.0, (frame_w,frame_h))
-  
-    
+fourcc = cv2.VideoWriter_fourcc(*'XVID')  
+writer = None
 # Facial and Smile recognition:
 
 
@@ -98,6 +96,9 @@ try:
                             fontColor,
                             lineType)
                     if len(smiles) > 0:
+                        if writer is None:
+                            writer =cv2.VideoWriter('capture_moments/'+time.strftime("%Y%m%d-%H%M%S") + '.avi',fourcc, 2.5, (frame_w,frame_h))
+
                         num_smiles = len(smiles)
                         trigger_time = instant
                         start_recording = True
@@ -107,6 +108,9 @@ try:
                     else:
                         print("STOP RECORDING")
                         start_recording = False
+                        if writer is not None:
+                            writer.release()
+                            writer = None
                         
                         #capture_video('captured_moments', 5)
                         
@@ -129,5 +133,6 @@ finally:
     print("Cancel")
     hdmi_out.stop()
     cap.release()
-    writer.release()
+    if writer is not None:
+        writer.release()
     cv2.destroyAllWindows()
