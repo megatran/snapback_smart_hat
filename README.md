@@ -16,7 +16,7 @@ http://pynq.readthedocs.io/en/latest/getting_started.html
 * Instal necessary libraries in requirements.txt
 If you don't have pip3 installed, run this command:
 ```
-sudo apt-get install python3-pip
+sudo apt-get install python3-pip ffmpeg x264 libx264-dev
 ```
 
 ```

@@ -6,8 +6,9 @@ import requests
 import dropbox
 import updown
 import json
+import config
 
-TOKEN = 'PQP4kBo8X-AAAAAAAAABCru0hFHK9T4rnvf72tVl7u4zN3TfduXgtu7Eg5PJecHd'
+TOKEN = config.dropbox_key
 dbx = dropbox.Dropbox(TOKEN)
 fileLists = updown.list_folder(dbx, "SnapBack", "")
 for name in fileLists.iterkeys():
