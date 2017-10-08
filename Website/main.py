@@ -47,7 +47,7 @@ def video(fileName):
     video = updown.download(dbx, "SnapBack", "", fileName)
     with open('file/' + fileName, 'wb') as writer:
         writer.write(video)
-    return render_template('videoPlayer.html', video='/file/'+fileName)
+    return render_template('videoPlayer.html', video='/file/' + fileName)
 
 
 @app.route('/file/<path:path>')
@@ -63,3 +63,8 @@ def send_css(path):
 @app.route('/js/<path:path>')
 def send_js(path):
     return send_from_directory('js', path)
+
+
+@app.route('/custom/<path:path>')
+def send_cust(path):
+    return send_from_directory('custom', path)
