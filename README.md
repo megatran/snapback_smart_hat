@@ -14,8 +14,13 @@ Team: Nhan Tran, Huan Wang, Tyler Quast, William Brickner
 http://pynq.readthedocs.io/en/latest/getting_started.html
 ```
 * Instal necessary libraries in requirements.txt
+If you don't have pip3 installed, run this command:
 ```
-pip install -r requirements.txt
+sudo apt-get install python3-pip
+```
+
+```
+pip3 install -r requirements.txt
 ```
 
 
