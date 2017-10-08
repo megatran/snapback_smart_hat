@@ -1,4 +1,9 @@
-# snapback_smart_hat
+<p align = "center">
+    <img src="img/githubSnapBackCover.jpg" />
+</p>
+
+# SnapBack the smart hat!
+
 People with short memory retention problems (for example Alzheimer's disease) sometimes cannot recall certain happy moments. Snapback is an IoT project (24 hours) that constantly analyzes the wearer's surrounding environment and automatically snaps 15 seconds of happy moments when it detects smiling faces. The wearer can later access those video and their happy moments will never fade!
 
 Team: Nhan Tran, Huan Wang, Tyler Quast, William Brickner
