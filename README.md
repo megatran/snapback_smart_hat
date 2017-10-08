@@ -6,6 +6,8 @@
 
 People with short memory retention problems (for example Alzheimer's disease) sometimes cannot recall certain happy moments. Snapback is an IoT project built in 24 hours at the Xilinx Technology Showcase & Hackathon 2017 that constantly analyzes the wearer's surrounding environment and automatically snaps 15 seconds of happy moments when it detects smiling faces. The wearer can later access those videos and their happy moments will never fade!
 
+### We won 2nd place “Runner Up” prize at Xilinx Hackathon 2017!
+
 ### Contributors: 
 Nhan Tran, Huan Wang, Tyler Quast, William Brickner
 
