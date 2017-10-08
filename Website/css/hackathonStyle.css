@@ -23,8 +23,12 @@ h2{
 }
 
 .btnIndex{
+	display:block; /* change this from inline-block */
+	width:20%; /* setting the width */
+	margin:0 auto;
 	text-align:center;
-	border-radius: 9px;	
+	border-radius: 9px;
+	font-family: 'Oswald', sans-serif;
 	color: #000000;
 	font-size: 135%;
 	padding: 10px 20px;
