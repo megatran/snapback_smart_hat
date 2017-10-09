@@ -18,6 +18,7 @@ see requirements.txt
 * OpenCV 3.0
 * Flask
 * Dropbox
+* A good looking cap (We used Nhan's Noogler intern propeller hat for this prototype)
 
 
 
@@ -37,7 +38,7 @@ pip3 install -r requirements.txt
 ```
 
 ### How it works
-Webcam-equipped cap that captures happy moments by recognizing smiling faces and using that recognition to trigger the capture of a short video clip, which is then wirelessly uploaded to the cloud for later viewing.
+Webcam-equipped cap that captures happy moments by recognizing smiling faces (utilizing OpenCV Haar Cascades) and using that recognition to trigger the capture of a short video clip, which is then wirelessly uploaded to the cloud for later viewing.
 
 <img src="img/SnapBack.jpg" />
 
