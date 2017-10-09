@@ -50,13 +50,13 @@ For power on the go, a power block was repurposed to connect the board to a 9V p
 <img src="img/BatteryPack.jpg" />
 
 ### Peripherals
-The peripherals that were used were from left to right: Arduino Sheild - For powering the periferals USB Webcam - For capturing memories USB Wifi - A Wifi Adapter for uploading memories to the cloud. USB Splitter - A Device for allowing multiple inputs into the board.
+The peripherals that were used were from left to right: Arduino Shield - For powering the periferals USB Webcam - For capturing memories USB Wifi - A Wifi Adapter for uploading memories to the cloud. USB Splitter - A Device for allowing multiple inputs into the board.
 
 <img src="img/Periferals.jpg" />
 
 
 ### Arduino Shield
-The ardunio sheild was modified to provide power to the peripherals by soldering the usb splitter power wire to the 5V pin on the board.
+The ardunio shield was modified to provide power to the peripherals by soldering the usb splitter power wire to the 5V pin on the board.
 
 <img src ='img/ArduinoShield.jpg' />
 
