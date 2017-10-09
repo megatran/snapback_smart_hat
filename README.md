@@ -65,6 +65,10 @@ This protective case hold the components together in a compact and discrete mann
 
 <img src="img/ProtectiveCase.jpg" />
 
+#### Everything is in the case! Completely cordless! You can walk around and snapback will capture your happy moments!
+
+<img src="img/enclosedBox.jpg" />
+
 ### Website Server Set up
 * 1. Install all the dependencies (see requirements.txt)
 ```
