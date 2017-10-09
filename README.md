@@ -87,7 +87,7 @@ to start the server. Go to localhost:5000 to view the site.
 ```
 python3.6 smile_detector.py
 ```
-
+<img src="img/smile_detected.png" />
 
 
 
